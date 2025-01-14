@@ -23,7 +23,9 @@ app.use((req, res, next) => {
     console.log(`Request URL: ${req.url}`);
     next();
 });
-
+app.get('/' , async(req, res)=>{
+    res.send('Welcome to flash card app api')
+})
 app.post('/generate', async (req, res) => {
     const { prompt } = req.body;
     try {
